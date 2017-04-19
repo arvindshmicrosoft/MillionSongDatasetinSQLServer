@@ -23,13 +23,3 @@ CREATE TABLE [dbo].[unique_tracks](
 	INDEX CCI_unique_tracks CLUSTERED COLUMNSTORE
 ) 
 GO
-
-CREATE TABLE [dbo].[sid_matches](
-	[SongId] [varchar](50) NULL,
-	[TrackId] [varchar](50) NULL,
-	[ActualArtist] [varchar](500) NULL,
-	[ActualSongTitle] [varchar](500) NULL,
-	INDEX CCI_sid_matches_tsv CLUSTERED COLUMNSTORE
-)
-GO
-

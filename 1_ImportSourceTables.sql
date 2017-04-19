@@ -21,18 +21,20 @@ GO
 -- https://labrosa.ee.columbia.edu/millionsong/blog/12-2-12-fixing-matching-errors
 -- Data file:
 -- http://labrosa.ee.columbia.edu/millionsong/sites/default/files/tasteprofile/sid_mismatches.txt
-update orig
-set orig.SongTitle = final.ActualSong,
+UPDATE orig
+SET orig.SongTitle = final.ActualSong,
 orig.ArtistName = final.ActualArtist
-from unique_tracks orig
-join (
-	SELECT        *
-	FROM OPENROWSET(BULK 'C:\MSD\SourceData\sid_mismatches.txt', 
-				FORMATFILE = 'C:\MSD\sid_mismatches.fmt', CODEPAGE = '65001') as MismatchedSongs
+FROM
+	unique_tracks orig
+	JOIN (
+	SELECT *
+	FROM
+		OPENROWSET(BULK 'C:\MSD\SourceData\sid_mismatches.txt', 
+				FORMATFILE = 'C:\MSD\sid_mismatches.fmt', CODEPAGE = '65001') AS MismatchedSongs
 ) AS final
-on orig.SongId = final.SongId
-where ActualArtist IS NOT NULL
-and ActualSong IS NOT NULL
-go
+	ON orig.SongId = final.SongId
+WHERE ActualArtist IS NOT NULL
+	AND ActualSong IS NOT NULL
+GO
 
 
