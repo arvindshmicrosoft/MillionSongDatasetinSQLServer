@@ -29,12 +29,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_GraphQueries", "2_GraphQu
 		6_VisualizationUsingR.sql = 6_VisualizationUsingR.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{30C70B3F-9AA5-4BA7-BB5D-E74446EA4B90}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.MD = Readme.MD
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{67F00D70-76C4-492C-AD27-849DEC6E463A}.Default|Default.ActiveCfg = Default
+		{1C808571-9D38-4DD8-BEE4-2DC253894943}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
