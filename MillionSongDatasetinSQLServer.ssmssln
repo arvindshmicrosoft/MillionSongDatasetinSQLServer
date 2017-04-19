@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 14.00
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_SourceData", "0_SourceData", "{B5131A07-4C40-4691-9E33-23D541E7EF9F}"
+	ProjectSection(SolutionItems) = preProject
+		0_CreateSourceTables.sql = 0_CreateSourceTables.sql
+		1_ImportSourceTables.sql = 1_ImportSourceTables.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_GraphData", "1_GraphData", "{0D224CFE-079A-4AFE-8907-25FF16FEDCD5}"
+	ProjectSection(SolutionItems) = preProject
+		2_CreateGraphTables.sql = 2_CreateGraphTables.sql
+		3_ConvertData.sql = 3_ConvertData.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulkImportFormatFiles", "BulkImportFormatFiles", "{9522BC5F-D9B2-447A-AB62-5E02E77DAB55}"
+	ProjectSection(SolutionItems) = preProject
+		echonesttracks.fmt = echonesttracks.fmt
+		sid_mismatches.fmt = sid_mismatches.fmt
+		train_triplets.fmt = train_triplets.fmt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F72A23D6-87F1-4449-B759-37203C77C7C6}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9522BC5F-D9B2-447A-AB62-5E02E77DAB55} = {B5131A07-4C40-4691-9E33-23D541E7EF9F}
+	EndGlobalSection
+EndGlobal
