@@ -1,5 +1,5 @@
 # Million Song Dataset in SQL Server 2017
-Importing and using the Million Song Dataset (https://labrosa.ee.columbia.edu/millionsong/) in SQL Server 2017
+Importing and using the Million Song Dataset (https://labrosa.ee.columbia.edu/millionsong/) in SQL Server 2017 to build a recommendation service for songs.
 
 # Pre-requisites
 First, get SQL Server 2017 (preview) from https://www.microsoft.com/en-us/sql-server/sql-server-2017
