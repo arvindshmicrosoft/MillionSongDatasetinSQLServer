@@ -24,6 +24,8 @@ to use the sample scripts or documentation, even if Microsoft has been advised o
 
 -- Reference: https://labrosa.ee.columbia.edu/millionsong/pages/getting-dataset
 -- Data file: http://labrosa.ee.columbia.edu/millionsong/sites/default/files/AdditionalFiles/unique_tracks.txt
+-- An interesting thing to note here is the usage of code page 65001, which is UTF-8. The unique_tracks.txt file is in UTF-8 format.
+-- See https://support.microsoft.com/en-us/help/3136780/utf-8-encoding-support-for-the-bcp-utility-and-bulk-insert-transact-sql-command-in-sql-server-2014-sp2 for a description of UTF-8 support in SQL
 INSERT dbo.unique_tracks
 SELECT        *
 FROM OPENROWSET(BULK 'C:\MSD\SourceData\unique_tracks.txt', 
