@@ -22,43 +22,18 @@ business interruption, loss of business information, or other pecuniary loss) ar
 to use the sample scripts or documentation, even if Microsoft has been advised of the possibility of such damages. 
 */
 
--- Reference: https://labrosa.ee.columbia.edu/millionsong/pages/getting-dataset
--- Data file: http://labrosa.ee.columbia.edu/millionsong/sites/default/files/AdditionalFiles/unique_tracks.txt
-INSERT dbo.unique_tracks
-SELECT        *
-FROM OPENROWSET(BULK 'C:\MSD\SourceData\unique_tracks.txt', 
-			FORMATFILE = 'C:\MSD\echonesttracks.fmt', 
-			CODEPAGE = '65001') AS RawData
+USE MillionSongDataset
 GO
 
--- Reference: https://labrosa.ee.columbia.edu/millionsong/tasteprofile
--- Data file (unzip manually please!): http://labrosa.ee.columbia.edu/millionsong/sites/default/files/challenge/train_triplets.txt.zip
-INSERT dbo.[train_triplets]
-SELECT        *
-FROM OPENROWSET(BULK 'C:\MSD\SourceData\train_triplets.txt', 
-			FORMATFILE = 'C:\MSD\train_triplets.fmt') AS RawData
+CREATE CLUSTERED columnstore INDEX cci_songs 
+ON UniqueSong;
 GO
 
--- Fix up errors in the Echo Nest data
--- References: 
--- https://labrosa.ee.columbia.edu/millionsong/blog/12-1-2-matching-errors-taste-profile-and-msd
--- https://labrosa.ee.columbia.edu/millionsong/blog/12-2-12-fixing-matching-errors
--- Data file:
--- http://labrosa.ee.columbia.edu/millionsong/sites/default/files/tasteprofile/sid_mismatches.txt
-UPDATE orig
-SET orig.SongTitle = final.ActualSong,
-orig.ArtistName = final.ActualArtist
-FROM
-	unique_tracks orig
-	JOIN (
-	SELECT *
-	FROM
-		OPENROWSET(BULK 'C:\MSD\SourceData\sid_mismatches.txt', 
-				FORMATFILE = 'C:\MSD\sid_mismatches.fmt', CODEPAGE = '65001') AS MismatchedSongs
-) AS final
-	ON orig.SongId = final.SongId
-WHERE ActualArtist IS NOT NULL
-	AND ActualSong IS NOT NULL
+CREATE CLUSTERED columnstore INDEX cci_users 
+ON UniqueUser;
 GO
 
+CREATE CLUSTERED columnstore INDEX cci_likes
+ON Likes;
+GO
 

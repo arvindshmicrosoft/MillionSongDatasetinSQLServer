@@ -22,12 +22,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulkImportFormatFiles", "Bu
 		train_triplets.fmt = train_triplets.fmt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_GraphQueries", "2_GraphQueries", "{1A26BFB5-8F9D-41E3-8ED2-A24CA78894A6}"
+	ProjectSection(SolutionItems) = preProject
+		4_FindRelatedSongs.sql = 4_FindRelatedSongs.sql
+		5_ImprovePerf.sql = 5_ImprovePerf.sql
+		6_VisualizationUsingR.sql = 6_VisualizationUsingR.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F72A23D6-87F1-4449-B759-37203C77C7C6}.Default|Default.ActiveCfg = Default
+		{67F00D70-76C4-492C-AD27-849DEC6E463A}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
