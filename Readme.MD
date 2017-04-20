@@ -1,8 +1,8 @@
 # Million Song Dataset in SQL Server 2017
-Importing and using the Million Song Dataset (https://labrosa.ee.columbia.edu/millionsong/) in SQL Server 2017 to build a recommendation service for songs.
+Importing and using the [Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/) in SQL Server 2017 to build a recommendation service for songs.
 
 # Pre-requisites
-First, get SQL Server 2017 (preview) from https://www.microsoft.com/en-us/sql-server/sql-server-2017
+First, get SQL Server 2017 (preview) [here](https://www.microsoft.com/en-us/sql-server/sql-server-2017).
 
 Next, download and copy the following files to a folder on your computer running SQL Server 2017 preview. The sample scripts assume this folder is C:\MSD on Windows; please modify accordingly based on your paths and OS versions.
 
@@ -27,7 +27,7 @@ The Million Song Dataset. In Proceedings of the 12th International Society
 for Music Information Retrieval Conference (ISMIR 2011), 2011.
 
 The Echo Nest Taste profile subset, the official user data collection for the Million Song
-Dataset, available at: http://labrosa.ee.columbia.edu/millionsong/tasteprofile
+Dataset, available [here](http://labrosa.ee.columbia.edu/millionsong/tasteprofile).
 
 # More information about the data set and sources
 More information about the Million Song Dataset and subsets / derivative datasets are available at:
