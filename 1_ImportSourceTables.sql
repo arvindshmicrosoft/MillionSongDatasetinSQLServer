@@ -28,7 +28,7 @@ to use the sample scripts or documentation, even if Microsoft has been advised o
 -- See https://support.microsoft.com/en-us/help/3136780/utf-8-encoding-support-for-the-bcp-utility-and-bulk-insert-transact-sql-command-in-sql-server-2014-sp2 for a description of UTF-8 support in SQL
 INSERT dbo.unique_tracks
 SELECT        *
-FROM OPENROWSET(BULK 'C:\MSD\SourceData\unique_tracks.txt', 
+FROM OPENROWSET(BULK 'C:\MSD\unique_tracks.txt', 
 			FORMATFILE = 'C:\MSD\echonesttracks.fmt', 
 			CODEPAGE = '65001') AS RawData
 GO
@@ -37,7 +37,7 @@ GO
 -- Data file (unzip manually please!): http://labrosa.ee.columbia.edu/millionsong/sites/default/files/challenge/train_triplets.txt.zip
 INSERT dbo.[train_triplets]
 SELECT        *
-FROM OPENROWSET(BULK 'C:\MSD\SourceData\train_triplets.txt', 
+FROM OPENROWSET(BULK 'C:\MSD\train_triplets.txt', 
 			FORMATFILE = 'C:\MSD\train_triplets.fmt') AS RawData
 GO
 
