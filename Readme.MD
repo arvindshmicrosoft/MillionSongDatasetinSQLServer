@@ -2,7 +2,7 @@
 Importing and using the [Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/) in SQL Server 2017 to build a recommendation service for songs.
 
 # Pre-requisites
-First, get SQL Server 2017 (preview) [here](https://www.microsoft.com/en-us/sql-server/sql-server-2017).
+First, get SQL Server 2017 (preview) [here](https://www.microsoft.com/en-us/sql-server/sql-server-2017). This demo works correctly on both SQL Server 2017 for Windows and also on SQL Server 2017 for Linux. (Do note that for Linux, you will need to adjust paths accordingly as the scripts assume Windows.)
 
 Next, download and copy the following files to a folder on your computer running SQL Server 2017 preview. The sample scripts assume this folder is C:\MSD on Windows; please modify accordingly based on your paths and OS versions.
 
