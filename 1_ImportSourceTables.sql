@@ -27,7 +27,7 @@ to use the sample scripts or documentation, even if Microsoft has been advised o
 -- An interesting thing to note here is the usage of code page 65001, which is UTF-8. The unique_tracks.txt file is in UTF-8 format.
 -- See https://support.microsoft.com/en-us/help/3136780/utf-8-encoding-support-for-the-bcp-utility-and-bulk-insert-transact-sql-command-in-sql-server-2014-sp2 for a description of UTF-8 support in SQL
 INSERT dbo.unique_tracks
-SELECT        *
+SELECT        TrackId, SongId, ArtistName, SongTitle
 FROM OPENROWSET(BULK 'C:\MSD\unique_tracks.txt', 
 			FORMATFILE = 'C:\MSD\echonesttracks.fmt', 
 			CODEPAGE = '65001') AS RawData
@@ -36,7 +36,7 @@ GO
 -- Reference: https://labrosa.ee.columbia.edu/millionsong/tasteprofile
 -- Data file (unzip manually please!): http://labrosa.ee.columbia.edu/millionsong/sites/default/files/challenge/train_triplets.txt.zip
 INSERT dbo.[train_triplets]
-SELECT        *
+SELECT        UserId, SongId, ListenCount
 FROM OPENROWSET(BULK 'C:\MSD\train_triplets.txt', 
 			FORMATFILE = 'C:\MSD\train_triplets.fmt') AS RawData
 GO
@@ -53,7 +53,7 @@ orig.ArtistName = final.ActualArtist
 FROM
 	unique_tracks orig
 	JOIN (
-	SELECT *
+	SELECT Error, SongId, TrackId, ActualArtist, ActualSong, OriginalArtist, OriginalSong
 	FROM
 		OPENROWSET(BULK 'C:\MSD\sid_mismatches.txt', 
 				FORMATFILE = 'C:\MSD\sid_mismatches.fmt', CODEPAGE = '65001') AS MismatchedSongs
