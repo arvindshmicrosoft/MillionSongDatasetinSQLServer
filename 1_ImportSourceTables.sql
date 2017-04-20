@@ -55,7 +55,7 @@ FROM
 	JOIN (
 	SELECT *
 	FROM
-		OPENROWSET(BULK 'C:\MSD\SourceData\sid_mismatches.txt', 
+		OPENROWSET(BULK 'C:\MSD\sid_mismatches.txt', 
 				FORMATFILE = 'C:\MSD\sid_mismatches.fmt', CODEPAGE = '65001') AS MismatchedSongs
 ) AS final
 	ON orig.SongId = final.SongId
