@@ -30,7 +30,7 @@ CREATE TABLE UniqueSong
 (
 	SongId     VARCHAR(50),
 	SongTitle  VARCHAR(500),
-	ArtistName VARCHAR(500)
+	ArtistName NVARCHAR(500)
 	)
 AS Node
 GO
