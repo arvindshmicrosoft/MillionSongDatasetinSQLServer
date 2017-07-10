@@ -17,9 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_GraphData", "1_GraphData"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BulkImportFormatFiles", "BulkImportFormatFiles", "{9522BC5F-D9B2-447A-AB62-5E02E77DAB55}"
 	ProjectSection(SolutionItems) = preProject
-		echonesttracks.fmt = echonesttracks.fmt
-		sid_mismatches.fmt = sid_mismatches.fmt
-		train_triplets.fmt = train_triplets.fmt
+		echonesttracks.xml = echonesttracks.xml
+		sid_mismatches.xml = sid_mismatches.xml
+		train_triplets.xml = train_triplets.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_GraphQueries", "2_GraphQueries", "{1A26BFB5-8F9D-41E3-8ED2-A24CA78894A6}"
@@ -39,7 +39,7 @@ Global
 		Default|Default = Default|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C808571-9D38-4DD8-BEE4-2DC253894943}.Default|Default.ActiveCfg = Default
+		{CF983DD3-9A1D-4551-909E-1F8EBE55B21F}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,7 +32,7 @@ GO
 INSERT dbo.unique_tracks
 SELECT        TrackId, SongId, ArtistName, SongTitle
 FROM OPENROWSET(BULK 'C:\MSD\unique_tracks.txt', 
-			FORMATFILE = 'C:\MSD\echonesttracks.fmt', 
+			FORMATFILE = 'C:\MSD\echonesttracks.xml', 
 			CODEPAGE = '65001') AS RawData
 GO
 
@@ -41,7 +41,7 @@ GO
 INSERT dbo.[train_triplets]
 SELECT        UserId, SongId, ListenCount
 FROM OPENROWSET(BULK 'C:\MSD\train_triplets.txt', 
-			FORMATFILE = 'C:\MSD\train_triplets.fmt') AS RawData
+			FORMATFILE = 'C:\MSD\train_triplets.xml') AS RawData
 GO
 
 -- Fix up errors in the Echo Nest data
@@ -59,7 +59,7 @@ FROM
 	SELECT Error, SongId, TrackId, ActualArtist, ActualSong, OriginalArtist, OriginalSong
 	FROM
 		OPENROWSET(BULK 'C:\MSD\sid_mismatches.txt', 
-				FORMATFILE = 'C:\MSD\sid_mismatches.fmt', CODEPAGE = '65001') AS MismatchedSongs
+				FORMATFILE = 'C:\MSD\sid_mismatches.xml', CODEPAGE = '65001') AS MismatchedSongs
 ) AS final
 	ON orig.SongId = final.SongId
 WHERE ActualArtist IS NOT NULL
