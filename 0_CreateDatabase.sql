@@ -1,4 +1,4 @@
-﻿/*
+/*
 Importing and using the Million Song Dataset (https://labrosa.ee.columbia.edu/millionsong/) in SQL Server 2017
 
 Citation:
@@ -21,19 +21,12 @@ be liable for any damages whatsoever (including, without limitation, damages for
 business interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability 
 to use the sample scripts or documentation, even if Microsoft has been advised of the possibility of such damages. 
 */
-CREATE TABLE [dbo].[train_triplets](
-	[UserId] [varchar](80) NULL,
-	[SongId] [varchar](36) NULL,
-	[ListenCount] [bigint] NULL,
-	INDEX CCI_train_triplets CLUSTERED COLUMNSTORE
-)
+
+CREATE DATABASE [MillionSongDataset]
 GO
 
-CREATE TABLE [dbo].[unique_tracks](
-	[TrackId] [varchar](50) NULL,
-	[SongId] [varchar](50) NULL,
-	[ArtistName] [nvarchar](500) NULL,
-	[SongTitle] [nvarchar](500) NULL,
-	INDEX CCI_unique_tracks CLUSTERED COLUMNSTORE
-) 
+ALTER DATABASE [MillionSongDataset] SET RECOVERY SIMPLE
+GO
+
+USE [MillionSongDataset]
 GO
