@@ -18,7 +18,13 @@ If you are using Azure SQL, files needs to be copied to an Azure Blob Store so t
 
 [Examples of Bulk Access to Data in Azure Blob Storage](https://docs.microsoft.com/en-us/sql/relational-databases/import-export/examples-of-bulk-access-to-data-in-azure-blob-storage?view=sql-server-ver15#accessing-data-in-a-csv-file-referencing-an-azure-blob-storage-location)
 
-Then proceed to execute the .SQL scripts in sequence! Do note that importing the data (1_ImportSourceTables.SQL) can take a few minutes depending on the performance of your computer.
+If you have the files on your local machine, you can still use BCP to push data to Azure SQL, for example:
+
+```
+bcp dbo.unique_tracks in C:\MSD\unique_tracks.txt -f C:\MSD\echonesttracks.xml -C 65001 -S <server>.database.windows.net -U <user> -P <Password> -d <Database> -a 32676 -b 10000  
+```
+
+Then proceed to execute the .SQL scripts in sequence. On Azure SQL you should create the database from the Portal or via AZ CLI (or also via T-SQL, just keep in mind command is slightly different than the one for SQL Server as you have to specify the Server Level Objective too). Do note that importing the data (1_ImportSourceTables.SQL) can take a few minutes depending on the performance of your computer or your network if importing data from your computer to Azure SQL.
 
 ## Graph data in SQL Server and Azure SQL
 
